@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Como usuario de la plataforma, requiero validar la autenticación, tambien de algunos escenarios alternos" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-19T13:26:01" hostname="MacBook-Pro-de-Mario.local" time="43.431">
+  <properties/>
+  <testcase name="Diligenciamiento exitoso del formulario de autenticación, no se presenta ningún mensaje de validación." classname="Como usuario de la plataforma, requiero validar la autenticación, tambien de algunos escenarios alternos" time="16.06"/>
+  <testcase name="Diligenciamiento fallido del formulario de autenticación con usuario registrado y clave invalida, se presenta mensaje de error." classname="Como usuario de la plataforma, requiero validar la autenticación, tambien de algunos escenarios alternos" time="10.12"/>
+  <testcase name="Diligenciamiento fallido del formulario de autenticación con usuario no registrado, se presenta mensaje de error." classname="Como usuario de la plataforma, requiero validar la autenticación, tambien de algunos escenarios alternos" time="7.339"/>
+  <testcase name="Diligenciamiento del formulario de autenticación sin escribir usuario, se presenta mensaje de error." classname="Como usuario de la plataforma, requiero validar la autenticación, tambien de algunos escenarios alternos" time="4.965"/>
+  <testcase name="Diligenciamiento del formulario de autenticación sin escribir clave, se presenta mensaje de error." classname="Como usuario de la plataforma, requiero validar la autenticación, tambien de algunos escenarios alternos" time="4.909"/>
+  <system-out><![CDATA[    Given Ingreso a la plataforma  opensourcecms                                                                   # AutenticationStepdefinitions.ingreso_a_la_plataforma_opensourcecms()
+    When Me autentico con usuario "opensourcecms" y clave "opensourcecms"                                          # AutenticationStepdefinitions.me_autentico_con_usuario_y_clave(String,String)
+    Then Verifico ingreso exitoso con usuario "opensourcecms"                                                      # AutenticationStepdefinitions.verificoIngresoExitosoConUsuario(String)
+    Given Ingreso a la plataforma  opensourcecms                                                                                            # AutenticationStepdefinitions.ingreso_a_la_plataforma_opensourcecms()
+    When Me autentico con usuario "opensourcecms" y clave "123456"                                                                          # AutenticationStepdefinitions.me_autentico_con_usuario_y_clave(String,String)
+    Then Verifico mensaje de error "ERROR: The password you entered for the username opensourcecms is incorrect. Lost your password?"       # AutenticationStepdefinitions.verificoMensajeDeError(String)
+    Given Ingreso a la plataforma  opensourcecms                                                                              # AutenticationStepdefinitions.ingreso_a_la_plataforma_opensourcecms()
+    When Me autentico con usuario "123456" y clave "123456"                                                                   # AutenticationStepdefinitions.me_autentico_con_usuario_y_clave(String,String)
+    Then Verifico mensaje de error "ERROR: Invalid username. Lost your password?"                                             # AutenticationStepdefinitions.verificoMensajeDeError(String)
+    Given Ingreso a la plataforma  opensourcecms                                                                 # AutenticationStepdefinitions.ingreso_a_la_plataforma_opensourcecms()
+    When Me autentico con clave "test"                                                                           # AutenticationStepdefinitions.meAutenticoConClave(String)
+    Then Verifico mensaje de error "ERROR: The username field is empty."                                         # AutenticationStepdefinitions.verificoMensajeDeError(String)
+    Given Ingreso a la plataforma  opensourcecms                                                               # AutenticationStepdefinitions.ingreso_a_la_plataforma_opensourcecms()
+    When Me autentico con usuario "test"                                                                       # AutenticationStepdefinitions.meAutenticoConUsuario(String)
+    Then Verifico mensaje de error "ERROR: The password field is empty."                                       # AutenticationStepdefinitions.verificoMensajeDeError(String)
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO  -    * Given Ingreso a la plataforma  opensourcecms
+[Test worker] INFO  -      * Carlos enter
+[Test worker] INFO  -        * Carlos opens the Autentication page object
+Nov 19, 2020 8:26:03 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Instantiating driver
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 35138
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Nov 19, 2020 8:26:09 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO  -    * When Me autentico con usuario "opensourcecms" y clave "opensourcecms"
+[Test worker] INFO  -      * Carlos enters 'opensourcecms' into Campo de texto usuario
+[Test worker] INFO  -      * Carlos enters 'opensourcecms' into Campo de texto contraseña
+[Test worker] INFO  -      * Carlos clicks on Button make to login
+[Test worker] INFO  -    * Then Verifico ingreso exitoso con usuario "opensourcecms"
+[Test worker] INFO  -      * Then the username should be 'opensourcecms'
+[Test worker] INFO  - ?[92m
+___ ____ ____ ___    ___  ____ ____ ____ ____ ___  
+ |  |___ [__   |     |__] |__| [__  [__  |___ |  \ 
+ |  |___ ___]  |     |    |  | ___] ___] |___ |__/ 
+-------------------------------------------------
+Diligenciamiento exitoso del formulario de autenticación, no se presenta ningún mensaje de validación.
+----------------------------------------------------?[0m
+[Test worker] INFO  -    * Given Ingreso a la plataforma  opensourcecms
+[Test worker] INFO  -      * Carlos enter
+[Test worker] INFO  -        * Carlos opens the Autentication page object
+Nov 19, 2020 8:26:17 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Instantiating driver
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 9067
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Nov 19, 2020 8:26:19 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO  -    * When Me autentico con usuario "opensourcecms" y clave "123456"
+[Test worker] INFO  -      * Carlos enters 'opensourcecms' into Campo de texto usuario
+[Test worker] INFO  -      * Carlos enters '123456' into Campo de texto contraseña
+[Test worker] INFO  -      * Carlos clicks on Button make to login
+[Test worker] INFO  -    * Then Verifico mensaje de error "ERROR: The password you entered for the username opensourcecms is incorrect. Lost your password?"
+[Test worker] INFO  -      * Then the message error should be (true)
+[Test worker] INFO  - ?[92m
+___ ____ ____ ___    ___  ____ ____ ____ ____ ___  
+ |  |___ [__   |     |__] |__| [__  [__  |___ |  \ 
+ |  |___ ___]  |     |    |  | ___] ___] |___ |__/ 
+-------------------------------------------------
+Diligenciamiento fallido del formulario de autenticación con usuario registrado y clave invalida, se presenta mensaje de error.
+----------------------------------------------------?[0m
+[Test worker] INFO  -    * Given Ingreso a la plataforma  opensourcecms
+[Test worker] INFO  -      * Carlos enter
+[Test worker] INFO  -        * Carlos opens the Autentication page object
+Nov 19, 2020 8:26:27 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Instantiating driver
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 2920
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Nov 19, 2020 8:26:29 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO  -    * When Me autentico con usuario "123456" y clave "123456"
+[Test worker] INFO  -      * Carlos enters '123456' into Campo de texto usuario
+[Test worker] INFO  -      * Carlos enters '123456' into Campo de texto contraseña
+[Test worker] INFO  -      * Carlos clicks on Button make to login
+[Test worker] INFO  -    * Then Verifico mensaje de error "ERROR: Invalid username. Lost your password?"
+[Test worker] INFO  -      * Then the message error should be (true)
+[Test worker] INFO  - ?[92m
+___ ____ ____ ___    ___  ____ ____ ____ ____ ___  
+ |  |___ [__   |     |__] |__| [__  [__  |___ |  \ 
+ |  |___ ___]  |     |    |  | ___] ___] |___ |__/ 
+-------------------------------------------------
+Diligenciamiento fallido del formulario de autenticación con usuario no registrado, se presenta mensaje de error.
+----------------------------------------------------?[0m
+[Test worker] INFO  -    * Given Ingreso a la plataforma  opensourcecms
+[Test worker] INFO  -      * Carlos enter
+[Test worker] INFO  -        * Carlos opens the Autentication page object
+Nov 19, 2020 8:26:34 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Instantiating driver
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 29885
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Nov 19, 2020 8:26:36 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO  -    * When Me autentico con clave "test"
+[Test worker] INFO  -      * Carlos enters 'test' into Campo de texto contraseña
+[Test worker] INFO  -      * Carlos clicks on Button make to login
+[Test worker] INFO  -    * Then Verifico mensaje de error "ERROR: The username field is empty."
+[Test worker] INFO  -      * Then the message error should be (true)
+[Test worker] INFO  - ?[92m
+___ ____ ____ ___    ___  ____ ____ ____ ____ ___  
+ |  |___ [__   |     |__] |__| [__  [__  |___ |  \ 
+ |  |___ ___]  |     |    |  | ___] ___] |___ |__/ 
+-------------------------------------------------
+Diligenciamiento del formulario de autenticación sin escribir usuario, se presenta mensaje de error.
+----------------------------------------------------?[0m
+[Test worker] INFO  -    * Given Ingreso a la plataforma  opensourcecms
+[Test worker] INFO  -      * Carlos enter
+[Test worker] INFO  -        * Carlos opens the Autentication page object
+Nov 19, 2020 8:26:39 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Instantiating driver
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 27254
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Nov 19, 2020 8:26:41 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO  -    * When Me autentico con usuario "test"
+[Test worker] INFO  -      * Carlos enters 'test' into Campo de texto usuario
+[Test worker] INFO  -      * Carlos clicks on Button make to login
+[Test worker] INFO  -    * Then Verifico mensaje de error "ERROR: The password field is empty."
+[Test worker] INFO  -      * Then the message error should be (true)
+[Test worker] INFO  - ?[92m
+___ ____ ____ ___    ___  ____ ____ ____ ____ ___  
+ |  |___ [__   |     |__] |__| [__  [__  |___ |  \ 
+ |  |___ ___]  |     |    |  | ___] ___] |___ |__/ 
+-------------------------------------------------
+Diligenciamiento del formulario de autenticación sin escribir clave, se presenta mensaje de error.
+----------------------------------------------------?[0m
+]]></system-err>
+</testsuite>

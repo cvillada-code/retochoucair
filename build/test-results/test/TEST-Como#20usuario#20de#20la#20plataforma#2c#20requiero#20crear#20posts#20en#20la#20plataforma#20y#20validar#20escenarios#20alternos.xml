@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Como usuario de la plataforma, requiero crear posts en la plataforma y validar escenarios alternos" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-11-19T13:26:01" hostname="MacBook-Pro-de-Mario.local" time="32.016">
+  <properties/>
+  <testcase name="Creación de post de manera exitosa" classname="Como usuario de la plataforma, requiero crear posts en la plataforma y validar escenarios alternos" time="32.016"/>
+  <system-out><![CDATA[    Given Ingreso a la plataforma  opensourcecms                                                                     # AutenticationStepdefinitions.ingreso_a_la_plataforma_opensourcecms()
+    When Me autentico con usuario "opensourcecms" y clave "opensourcecms"                                            # AutenticationStepdefinitions.me_autentico_con_usuario_y_clave(String,String)
+    Then Verifico ingreso exitoso con usuario "opensourcecms"                                                        # AutenticationStepdefinitions.verificoIngresoExitosoConUsuario(String)
+
+  @Regression @CreacionPostsExitosa
+  Scenario: Creación de post de manera exitosa # src/test/resources/features/posts.feature:11
+    Given Yo Ingreso a la opcion de post       # PostsStepdefinitions.yoIngresoALaOpcionDePost()
+    When Yo publico un nuevo post              # PostsStepdefinitions.yoPublicoUnNuevoPost()
+    Then Verifico que se haya creado el post   # PostsStepdefinitions.verificoQueSeHayaCreadoElPost()
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO  -    * Given Ingreso a la plataforma  opensourcecms
+[Test worker] INFO  -      * Carlos enter
+[Test worker] INFO  -        * Carlos opens the Autentication page object
+Nov 19, 2020 8:26:03 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Instantiating driver
+[Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ProvideNewDriver - Driver capabilities: Capabilities {acceptInsecureCerts: false, browserName: chrome, goog:chromeOptions: {args: [], extensions: []}, loggingPrefs: org.openqa.selenium.logging..., platform: ANY, version: }
+Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 17787
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Nov 19, 2020 8:26:09 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO  -    * When Me autentico con usuario "opensourcecms" y clave "opensourcecms"
+[Test worker] INFO  -      * Carlos enters 'opensourcecms' into Campo de texto usuario
+[Test worker] INFO  -      * Carlos enters 'opensourcecms' into Campo de texto contraseña
+[Test worker] INFO  -      * Carlos clicks on Button make to login
+[Test worker] INFO  -    * Then Verifico ingreso exitoso con usuario "opensourcecms"
+[Test worker] INFO  -      * Then the username should be 'opensourcecms'
+[Test worker] INFO  -    * Given Yo Ingreso a la opcion de post
+[Test worker] INFO  -      * Carlos access posts
+[Test worker] INFO  -        * Carlos clicks on Link posts page
+[Test worker] INFO  -    * When Yo publico un nuevo post
+[Test worker] INFO  -      * Carlos add post
+[Test worker] INFO  -        * Carlos clicks on Button add new post
+[Test worker] INFO  -        * Carlos enters 'Prueba' into Textarea for new post
+[Test worker] INFO  -        * Carlos clicks on Button publish post
+[Test worker] INFO  -        * Carlos clicks on Button confirm publish post
+[Test worker] INFO  -        * Carlos clicks on Button close message popup
+[Test worker] INFO  -        * Carlos clicks on Link view post success
+[Test worker] INFO  -    * Then Verifico que se haya creado el post
+[Test worker] INFO  -      * Then the post should be (true)
+[Test worker] INFO  - ?[92m
+___ ____ ____ ___    ___  ____ ____ ____ ____ ___  
+ |  |___ [__   |     |__] |__| [__  [__  |___ |  \ 
+ |  |___ ___]  |     |    |  | ___] ___] |___ |__/ 
+-------------------------------------------------
+Creación de post de manera exitosa
+----------------------------------------------------?[0m
+]]></system-err>
+</testsuite>
